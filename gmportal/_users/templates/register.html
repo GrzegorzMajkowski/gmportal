@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <br><br><br>
+    <div class="row">
+        <div class="col-lg-3 col-md-2 col-sm-0"></div>
+        <div class="col-lg-6 col-md-8 col-sm">
+            <div class="card text-center">
+                <div class="card-header">
+                    <div class="login-form">
+                        <form method="POST">
+                            <h2 class="text-center">Rejestracja użytkownika</h2>
+                            {{form.hidden_tag()}}
+                            <div class="form-group">
+                                {{form.email(class="form-control", placeholder="E-mail")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.username(class="form-control" , placeholder="Nazwa użytkownika")}}
+                            </div>
+
+                            <div class="form-group">
+                                {{form.password(class="form-control", placeholder="Hasło")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.pass_confirm( class="form-control", placeholder="Potwierdź hasło")}}
+                            </div>
+
+                            <div class="form-group">
+                                {{form.submit(class="btn btn-primary btn-block")}}
+                            </div>
+                        </form>
+                        <p class="text-center">Masz już konto? <a href="{{url_for('usersBP.login')}}">Zaloguj się</a>
+                        </p>
+
+                    </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-2 col-sm-0"></div>
+    </div>
+
+</div>
+{% endblock content %}
